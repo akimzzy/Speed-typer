@@ -118,6 +118,9 @@ body {
   text-align: center;
   background-color: #01012B;
   justify-self: center; }
+  @media only screen and (max-width: 500px) {
+    .highScore {
+      margin-bottom: 4rem; } }
 
 .gameOver {
   min-width: 80rem;

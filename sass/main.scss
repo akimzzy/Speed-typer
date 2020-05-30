@@ -168,6 +168,10 @@ body {
     @include regular;
     background-color: $darkColor;
     justify-self: center;
+
+    @media only screen and (max-width: $smallScreen) {
+        margin-bottom: $MB;
+    }
 }
 
 .gameOver {

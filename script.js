@@ -123,7 +123,8 @@ const upadteTime = (lvl) => {
 
 // function to display time up page
 const timeUp = (lvl, check) => {
-
+    // clear input field
+    input.value = ""
     // game and gameOver element from DOM
     const [game, gameOver] = [document.querySelector(".game"), document.querySelector(".gameOver")]
     // Update game over element with current score on the webpage 
@@ -132,6 +133,8 @@ const timeUp = (lvl, check) => {
     game.classList.add("NoDisplay")
     // show game over container
     gameOver.classList.remove("NoDisplay")
+    // disable difficulty change
+    difficulty.style.pointerEvents = "none"
 
     //if current score is greater than highscore change textContent to New HighSCore
     const container = gameOver.querySelector("span")
@@ -148,14 +151,18 @@ const intervalCheck = () => {
 
 // function to restart game
 const restart = () => {
+    //make difficulty available
+    difficulty.style.pointerEvents = "auto"
+    // clear input field
+    input.value = ""
+    // set input field to focus
+    input.focus()
     // element of game and gameOver from DOM
     const [game, gameOver] = [document.querySelector(".game"), document.querySelector(".gameOver")]
-
     // display game container
     game.classList.remove("NoDisplay")
     // hide gameOver container
     gameOver.classList.add("NoDisplay")
-
     // restart interval
     intervalCheck()
 }
@@ -164,6 +171,7 @@ const restart = () => {
 document.getElementById("restart").addEventListener("click", restart)
 // Do something when difficulty is changed 
 difficulty.addEventListener("change", () => {
+    
     // restart interval
     intervalCheck()
     // get difficulty value
