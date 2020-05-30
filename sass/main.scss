@@ -1,0 +1,213 @@
+$regular: 1.8rem;
+$large: $regular * 1.5;
+$darkColor: #01012B;
+$MB: 4rem;
+
+$largeScreen: 800px;
+$smallScreen: 500px;
+
+@mixin regular {
+    font-size: $regular;
+    color: #fff;
+    text-align: center;
+}
+@mixin large {
+    font-size: $large;
+    color: #fff;
+    text-align: center;
+}
+
+*,
+*::before,
+*::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @media only screen and (max-width: $largeScreen) {
+        font-size: 57%;
+    }
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif; 
+    padding: 10rem;
+    background-image: url(../Assets/bgDesktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    gap: $regular;
+    justify-content: center;
+    text-align: center;
+
+    @media only screen and (max-width: $largeScreen) {
+        padding: 5rem;
+    }
+
+    @media only screen and (max-width: $smallScreen) {
+        padding: 5rem 0;
+    }
+}
+
+.difficulty {
+    text-align: center;
+
+    label {
+        @include regular;
+        margin-right: 1rem;
+    }
+    select {
+        padding: .5rem;
+        appearance: none;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: .5rem;
+
+        &:focus {
+            outline: none;
+            background-color: transparent;
+        }
+
+        option {
+            color: $darkColor;
+        }
+    }
+
+}
+
+.game, 
+.gameOver {
+    grid-column: 1/-1;
+    grid-row: 2/ span 1; 
+    align-self: center;
+    transition: all .3s ease ;
+}
+
+.game {
+    z-index: 1;
+    
+
+    &__top {
+        display: grid;
+        gap: 10rem; 
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(2, max-content);
+        margin-bottom: $MB;    
+        width: 100%;
+        
+
+        @media only screen and (max-width: $smallScreen) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+        }
+
+        span {
+            display: inline-block;
+            @include regular;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            justify-self: center;
+            
+        }
+
+        .time {
+            background-color: $darkColor; 
+        }
+        .score {
+            border: 1px solid #fff;
+        }
+    }
+
+    .instruction {
+        @include regular;
+        display: inline-block;
+        margin-bottom: $MB/2;
+        opacity: .7;
+    }
+
+    .text {
+        @include large;
+        margin-bottom: $MB/1.5;
+    }
+
+    #textInput {
+        padding: 1rem;
+        width: 40rem;
+        border-radius: 3rem;
+        border: none;
+        outline: none;
+
+        @media only screen and (max-width: $smallScreen) {
+            width: 70%;
+
+        }
+
+        &:focus {
+            outline: none;
+
+        }
+    }
+
+}
+
+.highScore {
+    padding: $MB/2 $MB;
+    @include regular;
+    background-color: $darkColor;
+    justify-self: center;
+}
+
+.gameOver {
+    min-width: 80rem; 
+    padding: $MB;
+    background-color: rgba($darkColor, .5);
+    color: #fff;
+
+    @media only screen and (max-width: $largeScreen) {
+        min-width: 100vw;  
+        padding: $MB/2;
+    }
+
+    h2 {
+        margin-bottom: $MB/2; 
+        @include large;
+        line-height: 1.3;
+    }
+
+    button {
+        padding: $MB/5 $MB/2;
+        border-radius: 2rem;
+        background-color: $darkColor;
+        border: 1px solid #fff; 
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.5rem;
+        // @include regular;
+        letter-spacing: 1.2px;
+
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+}
+
+.NoDisplay {
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1;
+}

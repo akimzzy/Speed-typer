@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">   <link rel="icon" type="image/png" sizes="32x32" href="./images/Coolzey.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Typing Speed</title>
+</head>
+
+<body>
+    <div class="difficulty">
+        <label for="difficulty">Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+    <div class="game">
+        <div class="game__top">
+            <span class="time">Time left: <b>10s</b></b></span>
+            <span class="score">Score: <b>0</b></span>
+        </div>
+        <span class="instruction">Type the following:</span>
+        <h1 class="text">Enough</h1>
+        <input type="text" id="textInput">
+    </div>
+    <div class="gameOver NoDisplay">
+        <h2 class="text">
+            Time's Up! <br> <span> Your score</span> is <b>10</b>
+        </h2>
+        <button id="restart">Restart</button>
+    </div>
+    <div class="highScore">High Score: <b>20</b></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
