@@ -1,19 +1,19 @@
 
 const level = {
     "easy":  { 
-        text: ["Enough","Bread","Check","Sail","Brought","Hotel","function","intern" ],
+        text: ["Enough","Bread","Check","Sail","Brought","Hotel","function","intern", "time", "learn", "along", "one", "animal", "almost", "country", "his", "light", "well", "mother", "very", "sound", "over", "them", "down", "country", "went", "those", "such", "little", "long", "great", "enough", "want", "more", "give", "around", "letter", "until", "father", "even", "because", "next", "took", "turn", "paper", "could", "because", "story" ],
         currentScore: 0,
         highScore: 0,
     },
 
     "medium": {
-        text: ["Savage","Condolence","Happiness is Key","Keep practicing","Zebra crossing","The big bad Wolf","Smallest particles"],
+        text: ["Savage","Condolence","Happiness","practicing","Zebra", "crossing","freelancer","Smallest", "particles", "freelance", "commonly", "self-employed", "necessarily", "committed", "particular", "employer", "Freelance", "represented", "sometimes", "temporary", "independently", "independent", "contractor", "English", "designate", "employment", "industries", "creative", "specifically", "professions", "predominant", "programming", "translating", "illustrating", "production", "cultural", "theorists", "consider", "cognitive"],
         currentScore: 0,
         highScore: 0,
     },
 
     "hard": {
-        text:  [ "Restoration and Refactoring", "The Paint is too glossy", "I've got Fast Fingers!", "Chill, I'm gonna add more later"],
+        text:  [ "Restoration", "Refactoring","piazzas","pizzas", "suburban", "assuming", "obstinance", "foramens", "Previous", "geometric", "analogy", "technique", "Physical", "characteristics", "relationship", "The Paint is too glossy", "I've got Fast Fingers!", "Chill, I'm gonna add more later"],
         currentScore: 0,
         highScore: 0,
     }
@@ -73,7 +73,6 @@ let countdown = 10
 // Time and Difficulty Element
 const [DOMTime, difficulty] = [document.querySelector(".game__top").querySelector(".time"), document.querySelector(".difficulty").querySelector("select")]
 
-
 let check
 // timer function 
 const timer = () => {
@@ -88,7 +87,7 @@ const timer = () => {
     }
 
     // decrease countdown
-    countdown = countdown - 1 
+    countdown = countdown - 1
     // Update time on the webpage
     DOMTime.querySelector("b").textContent = `${countdown}s`
 }
@@ -118,7 +117,7 @@ const updateHS = (lvl) => {
 
 // function to update countdown time
 const upadteTime = (lvl) => {
-    lvl === "easy" ?  countdown = countdown + 3 : countdown = countdown + 4
+    lvl === "easy" ?  countdown = countdown + 4 : countdown = countdown + 3
 }
 
 // function to display time up page
