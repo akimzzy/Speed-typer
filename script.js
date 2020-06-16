@@ -13,7 +13,7 @@ const level = {
     },
 
     "hard": {
-        text:  [ "Restoration", "Refactoring","piazzas","pizzas", "suburban", "assuming", "obstinance", "foramens", "Previous", "geometric", "analogy", "technique", "Physical", "characteristics", "relationship", "The Paint is too glossy", "I've got Fast Fingers!", "Chill, I'm gonna add more later"],
+        text:  [ "Restoration", "Refactoring","piazzas","pizzas", "suburban", "assuming", "obstinance", "foramens", "Previous", "geometric", "analogy", "technique", "Physical", "Characteristics", "Relationship", "Too glossy", "Fast Fingers!"],
         currentScore: 0,
         highScore: 0,
     }
